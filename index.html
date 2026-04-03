@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Turn Instagram views into paying clients in 5 days. Custom landing pages for personal trainers and therapists in Delhi NCR. ₹5,000 flat.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Velour Media">
+
+  <title>Velour Media — Landing Pages That Close</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=DM+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --ink:        #111111;
+      --ink-2:      #1a1a1a;
+      --paper:      #ffffff;
+      --paper-alt:  #f5f5f5;
+      --terra:      #25D366; 
+      --terra-dk:   #1da851;
+      --stone:      #e0e0e0;
+      --dust:       #888888;
+      --mist:       #555555;
+      
+      --f-display: 'Inter', sans-serif;
+      --f-mono:    'DM Mono', monospace;
+
+      --mw: 1080px;
+      --px: clamp(1.25rem, 5vw, 3.5rem);
+      --gap: clamp(4rem, 8vw, 6.5rem);
+    }
+
+    /* ── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--f-display);
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+
+    /* ── TYPE HELPERS ────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--f-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--dust);
+      margin-bottom: 1rem;
+    }
+
+    /* ── LAYOUT ──────────────────────────────────────────────── */
+    .wrap { max-width: var(--mw); margin: 0 auto; padding: 0 var(--px); }
+    .sec  { padding: var(--gap) 0; }
+    .sec--dark { background: var(--ink); color: var(--paper); }
+    .sec--alt  { background: var(--paper-alt); }
+
+    /* ── BUTTONS ─────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: var(--terra); color: #fff;
+      font-weight: 700; font-size: 1rem;
+      padding: 16px 32px; border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+      text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .btn-primary:hover { background: var(--terra-dk); transform: translateY(-2px); }
+    
+    .btn-ghost {
+      font-weight: 500; font-size: 0.9rem;
+      color: var(--dust); transition: color 0.2s;
+      text-decoration: underline;
+    }
+    .btn-ghost:hover { color: var(--paper); }
+
+    /* ════════════════════════════════════════════════════════════
+       NAV
+    ════════════════════════════════════════════════════════════ */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--ink);
+      border-bottom: 1px solid #222;
+      padding: 1rem var(--px);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav__logo { font-weight: 900; font-size: 1.2rem; color: var(--paper); letter-spacing: -0.02em; }
+
+    /* ════════════════════════════════════════════════════════════
+       HERO 
+    ════════════════════════════════════════════════════════════ */
+    .hero {
+      background: var(--ink);
+      padding: clamp(4rem, 10vw, 8rem) var(--px) clamp(3rem, 7vw, 5.5rem);
+    }
+    .hero__inner { max-width: 900px; margin: 0 auto; text-align: center; }
+
+    .hero__hl {
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--paper);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+    .hero__hl span { color: var(--terra); }
+
+    .hero__sub {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem); 
+      color: #aaa;
+      line-height: 1.5; 
+      max-width: 60ch;
+      margin: 0 auto 3rem; 
+      font-weight: 400;
+    }
+    .hero__sub strong { color: var(--paper); }
+
+    .hero__cta-row { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+    /* ════════════════════════════════════════════════════════════
+       PROOF BANNER 
+    ════════════════════════════════════════════════════════════ */
+    .proof-banner {
+      background: var(--ink-2);
+      border-top: 1px solid #333; border-bottom: 1px solid #333;
+      padding: 3rem var(--px);
+    }
+    .proof-banner__inner { 
+      max-width: var(--mw); margin: 0 auto; 
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; justify-content: center;
+    }
+    .proof-banner__text { max-width: 500px; }
+    .proof-banner__quote {
+      font-size: 1.2rem; color: var(--paper); line-height: 1.6; font-weight: 500; font-style: italic;
+    }
+    .proof-banner__attr {
+      font-weight: 700; font-size: 0.9rem; color: var(--dust); margin-top: 10px;
+    }
+    .proof-banner__img {
+      width: 250px; height: 120px; background: #333; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: #666; font-size: 0.8rem; font-family: var(--f-mono); text-align: center;
+      border: 1px dashed #555;
+    }
+
+    /* ════════════════════════════════════════════════════════════
+       PROBLEM
+    ════════════════════════════════════════════════════════════ */
+    .problem__hl {
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.03em; margin-bottom: 1.5rem;
+    }
+    .problem__body { font-size: 1.1rem; color: var(--mist); line-height: 1.6; max-width: 60ch; }
+    
+    .pain-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .pain-item { background: var(--paper); padding: 1.5rem; border: 1px solid var(--stone); border-radius: 6px; }
+    .pain-item__x { font-weight: 700; color: #d32525; margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .pain-item__text { font-size: 0.95rem; color: var(--mist); line-height: 1.5; }
+
+    /* ════════════════════════════════════════════════════════════
+       PROCESS
+    ════════════════════════════════════════════════════════════ */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .step { border-left: 3px solid var(--ink); padding-left: 1.5rem; }
+    .step__n { font-weight: 900; font-size: 1.5rem; color: var(--stone); margin-bottom: 0.5rem; }
+    .step__t { font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .step__b { font-size: 1rem; color: var(--mist); line-height: 1.6; }
+
+    /* ════════════════════════════════════════════════════════════
+       VALUE & MATH
+    ════════════════════════════════════════════════════════════ */
+    .value-item {
+      padding: 1.5rem 0; border-top: 1px solid #333;
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .value-item:last-child { border-bottom: 1px solid #333; margin-bottom: 3rem; }
+    .value-item__check { color: var(--terra); font-weight: 900; }
+    .value-item__text strong { display: block; color: var(--paper); font-size: 1.1rem; margin-bottom: 4px; }
+    .value-item__text span { color: #aaa; font-size: 0.95rem; }
+
+    .math-box { background: var(--ink-2); border: 1px solid #333; border-radius: 8px; padding: 2rem; }
+    .math-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid #2a2a2a; }
+    .math-row:last-of-type { border-bottom: none; }
+    .math-row__label { color: #ccc; font-size: 0.95rem; }
+    .math-row__val { font-weight: 700; color: var(--paper); }
+    .math-row--total .math-row__label { font-weight: 900; font-size: 1.2rem; color: var(--paper); }
+    .math-row--total .math-row__val { color: var(--terra); font-size: 1.5rem; }
+
+    /* ════════════════════════════════════════════════════════════
+       GRAND SLAM OFFER
+    ════════════════════════════════════════════════════════════ */
+    .offer-wrap { max-width: 600px; margin: 0 auto; text-align: center; }
+    .offer__price { font-weight: 900; font-size: clamp(4rem, 10vw, 7rem); color: var(--paper); line-height: 1; letter-spacing: -0.05em; margin-bottom: 1rem; }
+    
+    .guarantee {
+      background: rgba(37, 211, 102, 0.1); border: 1px solid var(--terra);
+      border-radius: 6px; padding: 1.5rem; margin: 2rem 0; text-align: left;
+    }
+    .guarantee__label { font-weight: 900; font-size: 1.2rem; color: var(--terra); margin-bottom: 0.5rem; text-transform: uppercase;}
+    .guarantee__text { font-size: 1rem; color: #ddd; line-height: 1.6; }
+
+    /* ════════════════════════════════════════════════════════════
+       AUTHOR BOX
+    ════════════════════════════════════════════════════════════ */
+    .author-box {
+      margin-top: 3rem; text-align: left; display: flex; align-items: center; gap: 1rem; justify-content: center;
+    }
+    .author-box__img { width: 50px; height: 50px; background: #333; border-radius: 50%; } 
+    .author-box__text p { font-size: 0.9rem; color: var(--dust); }
+    .author-box__text strong { color: var(--paper); }
+
+    /* ════════════════════════════════════════════════════════════
+       STICKY MOBILE CTA
+    ════════════════════════════════════════════════════════════ */
+    .sticky-cta { display: none; }
+    @media (max-width: 600px) {
+      .hero__cta-row .btn-primary { display: none; } 
+      .sticky-cta {
+        display: block; position: fixed; bottom: 0; left: 0; width: 100%;
+        background: var(--ink); padding: 1rem; z-index: 1000;
+        border-top: 1px solid #333; box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+      }
+      .sticky-cta .btn-primary { width: 100%; font-size: 1.1rem; padding: 18px; }
+      body { padding-bottom: 80px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav__logo">VELOUR MEDIA</div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <h1 class="hero__hl">Turn Instagram Views Into <span>Paying Clients</span> In 5 Days.</h1>
+      <p class="hero__sub">Stop losing hot leads to ugly Google Forms. I build custom, high-converting landing pages for Delhi NCR wellness pros. <strong>₹5,000 flat. Zero monthly fees.</strong></p>
+      
+      <div class="hero__cta-row">
+        <a href="#offer" class="btn-primary">Build My Page →</a>
+        <a href="#problem" class="btn-ghost">See how it works</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="proof-banner">
+    <div class="proof-banner__inner">
+      <div class="proof-banner__text">
+        <p class="proof-banner__quote">"I got my first WhatsApp enquiry 6 days after going live. Didn't have to explain anything — they'd already read the page."</p>
+        <p class="proof-banner__attr">PRIYA SHARMA | Personal Trainer, South Delhi</p>
+      </div>
+      <div class="proof-banner__img">[Insert Screenshot of WhatsApp Lead Here]</div>
+    </div>
+  </div>
+
+  <section class="sec sec--alt" id="problem">
+    <div class="wrap">
+      <p class="eyebrow">The Problem</p>
+      <h2 class="problem__hl">Great content.<br>Nowhere to send them.</h2>
+      <p class="problem__body">You're putting out real content. People are watching and clicking. But when they land on a page that doesn't match your quality, the trust you built in 30 seconds evaporates in 3.</p>
+
+      <div class="pain-grid">
+        <div class="pain-item">
+          <p class="pain-item__x">✕ Google Form</p>
+          <p class="pain-item__text">Looks like a school project. Kills perceived value instantly.</p>
+        </div>
+        <div class="pain-item">
+          <p class="pain-item__x">✕ Old Wix page</p>
+          <p class="pain-item__text">Slow, generic, mobile-broken. Says "I don't take this seriously."</p>
+        </div>
+        <div class="pain-item">
+          <p class="pain-item__x">✕ Instagram Bio Only</p>
+          <p class="pain-item__text">They came ready to book, but you made it too hard.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="eyebrow">The Process</p>
+      <h2 class="problem__hl">You do 1%. I do 99%.</h2>
+      <div class="steps">
+        <div class="step">
+          <p class="step__n">01.</p>
+          <p class="step__t">Send me 20 mins</p>
+          <p class="step__b">Answer a few questions over WhatsApp. No calls, no confusing briefs.</p>
+        </div>
+        <div class="step">
+          <p class="step__n">02.</p>
+          <p class="step__t">I build the machine</p>
+          <p class="step__b">Custom design, copy, and a WhatsApp contact setup. Done in 5 days.</p>
+        </div>
+        <div class="step">
+          <p class="step__n">03.</p>
+          <p class="step__t">Start closing</p>
+          <p class="step__b">Put the link in your bio. Let the page do the selling while you train.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--dark">
+    <div class="wrap">
+      <p class="eyebrow">The Value Stack</p>
+      <h2 class="problem__hl" style="color:var(--paper)">Everything included.<br>Nothing extra.</h2>
+      
+      <div style="max-width: 800px;">
+        <ul class="value-list">
+          <li class="value-item">
+            <span class="value-item__check">✓</span>
+            <div class="value-item__text">
+              <strong>Custom design, built around you</strong>
+              <span>Your brand, your colours. Not a copy-paste template.</span>
+            </div>
+          </li>
+          <li class="value-item">
+            <span class="value-item__check">✓</span>
+            <div class="value-item__text">
+              <strong>Optimized for the device 83% of your clients use</strong>
+              <span>Flawless mobile experience that loads instantly.</span>
+            </div>
+          </li>
+          <li class="value-item">
+            <span class="value-item__check">✓</span>
+            <div class="value-item__text">
+              <strong>1-Tap WhatsApp Integration</strong>
+              <span>Zero friction between their interest and your inbox.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="math-box">
+          <p class="eyebrow" style="color:var(--dust)">The Undeniable Math</p>
+          <div class="math-row">
+            <span class="math-row__label">Avg. client value (Delhi NCR)</span>
+            <span class="math-row__val">₹4,000 / mo</span>
+          </div>
+          <div class="math-row">
+            <span class="math-row__label">Clients needed to break even</span>
+            <span class="math-row__val">Just 1</span>
+          </div>
+          <div class="math-row math-row--total">
+            <span class="math-row__label">One-time investment</span>
+            <span class="math-row__val">₹5,000</span>
+          </div>
+          <p style="color:#aaa; font-size:0.9rem; margin-top:1rem; line-height:1.5;">
+            If this page brings in <strong>one extra client</strong>, it pays for itself. Every client after that is pure profit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--dark" id="offer" style="padding-top:0">
+    <div class="wrap">
+      <div class="offer-wrap">
+        <p class="eyebrow">The Grand Slam Offer</p>
+        <p class="offer__price">₹5,000</p>
+        <p style="color:var(--dust); font-weight:700; text-transform:uppercase; letter-spacing:0.1em;">Flat Fee. No Subscriptions.</p>
+
+        <div class="guarantee">
+          <p class="guarantee__label">The 30-Day ROI Guarantee</p>
+          <p class="guarantee__text">If this page doesn't generate at least <strong>one paying client</strong> for you in the first 30 days, I will refund your ₹5,000 in full. And you can keep the page. You literally cannot lose money on this.</p>
+        </div>
+
+        <a href="https://wa.me/917678297261?text=Hey%20Krish%2C%20I%20want%20a%20landing%20page%20for%20my%20" class="btn-primary" style="width:100%; padding:20px; font-size:1.2rem;">
+          CHAT ON WHATSAPP — START TODAY
+        </a>
+
+        <div class="author-box">
+          <div class="author-box__img"></div> 
+          <div class="author-box__text">
+            <p><strong>Hey, I'm Krish.</strong></p>
+            <p>I build these pages myself. Message me directly to claim your spot.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="sticky-cta">
+    <a href="https://wa.me/917678297261?text=Hey%20Krish%2C%20I%20want%20a%20landing%20page%20for%20my%20" class="btn-primary">
+      Start My Page Now →
+    </a>
+  </div>
+
+</body>
+</html>
